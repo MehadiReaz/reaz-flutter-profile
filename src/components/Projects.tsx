@@ -1,10 +1,42 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
 
 const Projects = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+          
+          const cards = entry.target.querySelectorAll('.project-card');
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('opacity-100');
+              card.classList.remove('opacity-0', 'translate-y-10');
+            }, index * 200);
+          });
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const projects = [
     {
       title: 'Dazzle - Multi-brand Gadget Store',
@@ -38,12 +70,19 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 px-4 max-w-6xl mx-auto">
+    <section 
+      id="projects" 
+      ref={sectionRef}
+      className="py-16 px-4 max-w-6xl mx-auto opacity-0 translate-y-10 transition-all duration-700"
+    >
       <h2 className="section-title">Featured Projects</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         {projects.map((project, index) => (
-          <Card key={index} className="project-card overflow-hidden">
+          <Card 
+            key={index} 
+            className="project-card overflow-hidden glass-card opacity-0 translate-y-10 transition-all duration-700"
+          >
             <div className="h-48 overflow-hidden">
               <img 
                 src={project.image} 
@@ -53,20 +92,20 @@ const Projects = () => {
             </div>
             
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
+              <CardTitle className="text-primary">{project.title}</CardTitle>
+              <CardDescription className="text-foreground/70">{project.description}</CardDescription>
             </CardHeader>
             
             <CardContent>
               <div className="mb-4">
                 <p className="text-sm font-medium text-muted-foreground">Technologies:</p>
-                <p>{project.tech}</p>
+                <p className="text-foreground/80">{project.tech}</p>
               </div>
             </CardContent>
             
             <CardFooter className="flex gap-2">
               {project.links.map((link, idx) => (
-                <Button key={idx} variant="outline" size="sm" asChild>
+                <Button key={idx} variant="outline" size="sm" asChild className="border-primary/30 hover:bg-primary/10">
                   <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
                     {link.title}
                     <ExternalLink className="h-3 w-3" />
@@ -79,7 +118,7 @@ const Projects = () => {
       </div>
       
       <div className="text-center mt-12">
-        <Button variant="secondary">
+        <Button variant="secondary" className="animate-pulse-glow">
           <a href="#" className="flex items-center gap-2">
             View All Projects
             <ExternalLink className="h-4 w-4" />
