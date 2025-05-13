@@ -1,9 +1,6 @@
-
 import React from 'react';
-
 const Footer = () => {
-  return (
-    <footer className="py-8 px-4 bg-primary text-primary-foreground">
+  return <footer className="py-8 px-4 bg-primary text-primary-foreground">
       <div className="max-w-6xl mx-auto text-center">
         <p>© {new Date().getFullYear()} Mehadi Hasan Reaz. All rights reserved.</p>
         
@@ -30,8 +27,6 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
