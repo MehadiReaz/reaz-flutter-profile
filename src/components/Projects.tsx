@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -44,29 +43,29 @@ const Projects = () => {
       description: 'E-Commerce app featuring phones, tablets, MacBooks with secure checkout',
       tech: 'Flutter, GetX, Firebase, SSLcommerz, BKash',
       links: [
-        { title: 'Direct APK', url: '#' }
+        { title: 'Website', url: 'https://dazzle.com.bd' }
       ],
-      image: '/lovable-uploads/db671647-5300-412c-8d49-661b10cfce20.png'
+      image: '/uploads/dazzle.png'
     },
     {
       title: 'Smart HRM',
       description: 'Enterprise HR solution for payroll, attendance, and leave management',
       tech: 'Flutter, SQLite, REST API, GetX',
       links: [
-        { title: 'Google Play', url: '#' },
-        { title: 'App Store', url: '#' }
+        { title: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.smartsoftware.hrm&hl=bn' },
+        { title: 'App Store', url: 'https://apps.apple.com/us/app/smart-hrm/id1643284472' }
       ],
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d'
+      image: '/uploads/hrm.png'
     },
     {
       title: 'Snakebite Emergency App',
       description: 'Life-saving app with antivenom hospital contacts and first aid guides',
       tech: 'Flutter, Geolocation, GetX',
       links: [
-        { title: 'Google Play', url: '#' },
-        { title: 'App Store', url: '#' }
+        { title: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.smartsoftware.snakebite&hl=bn' },
+        { title: 'App Store', url: 'https://apps.apple.com/us/app/snake-bite-awareness-app/id6504925995' }
       ],
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b'
+      image: '/uploads/snakebite.png'
     }
   ];
 
