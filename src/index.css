@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,11 +14,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 210 100% 35%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 195 100% 35%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -97,5 +98,26 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold text-primary mb-6 relative;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute left-0 -bottom-2 w-20 h-1 bg-secondary;
+  }
+  
+  .project-card {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l border-muted-foreground last:border-0;
+  }
+  
+  .timeline-dot {
+    @apply absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-primary;
   }
 }

@@ -1,0 +1,93 @@
+
+import React from 'react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ExternalLink } from 'lucide-react';
+
+const Projects = () => {
+  const projects = [
+    {
+      title: 'Dazzle - Multi-brand Gadget Store',
+      description: 'E-Commerce app featuring phones, tablets, MacBooks with secure checkout',
+      tech: 'Flutter, GetX, Firebase, SSLcommerz, BKash',
+      links: [
+        { title: 'Direct APK', url: '#' }
+      ],
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7'
+    },
+    {
+      title: 'Smart HRM',
+      description: 'Enterprise HR solution for payroll, attendance, and leave management',
+      tech: 'Flutter, SQLite, REST API, GetX',
+      links: [
+        { title: 'Google Play', url: '#' },
+        { title: 'App Store', url: '#' }
+      ],
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d'
+    },
+    {
+      title: 'Snakebite Emergency App',
+      description: 'Life-saving app with antivenom hospital contacts and first aid guides',
+      tech: 'Flutter, Geolocation, GetX',
+      links: [
+        { title: 'Google Play', url: '#' },
+        { title: 'App Store', url: '#' }
+      ],
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b'
+    }
+  ];
+
+  return (
+    <section id="projects" className="py-16 px-4 max-w-6xl mx-auto">
+      <h2 className="section-title">Featured Projects</h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {projects.map((project, index) => (
+          <Card key={index} className="project-card overflow-hidden">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            
+            <CardHeader>
+              <CardTitle>{project.title}</CardTitle>
+              <CardDescription>{project.description}</CardDescription>
+            </CardHeader>
+            
+            <CardContent>
+              <div className="mb-4">
+                <p className="text-sm font-medium text-muted-foreground">Technologies:</p>
+                <p>{project.tech}</p>
+              </div>
+            </CardContent>
+            
+            <CardFooter className="flex gap-2">
+              {project.links.map((link, idx) => (
+                <Button key={idx} variant="outline" size="sm" asChild>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                    {link.title}
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </Button>
+              ))}
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+      
+      <div className="text-center mt-12">
+        <Button variant="secondary">
+          <a href="#" className="flex items-center gap-2">
+            View All Projects
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </Button>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
