@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Download } from 'lucide-react';
@@ -21,7 +20,7 @@ const Header = () => {
   const downloadCV = () => {
     // Create an anchor element and set its properties
     const link = document.createElement('a');
-    link.href = '/mehadi-cv.pdf';
+    link.href = '/reaz-flutter-profile/mehadi-cv.pdf';
     link.download = 'Mehadi_Hasan_Reaz_CV.pdf'; // The downloaded file name
     
     // Append to the document

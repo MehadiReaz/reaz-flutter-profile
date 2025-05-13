@@ -35,7 +35,7 @@ const AllProjects = () => {
         { title: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.smartsoftware.hrm&hl=bn' },
         { title: 'App Store', url: 'https://apps.apple.com/us/app/smart-hrm/id1643284472' }
       ],
-      image: '/uploads/hrm.png'
+      image: '/uploads/smarthrm.webp'
     },
     {
       title: 'Snakebite Emergency App',
@@ -45,7 +45,7 @@ const AllProjects = () => {
         { title: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.smartsoftware.snakebite&hl=bn' },
         { title: 'App Store', url: 'https://apps.apple.com/us/app/snake-bite-awareness-app/id6504925995' }
       ],
-      image: '/uploads/snakebite.png'
+      image: '/uploads/snakebite.webp'
     },
     {
       title: 'Kokonte',
@@ -54,7 +54,7 @@ const AllProjects = () => {
       links: [
         { title: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.kokonte.app&hl=en_US' }
       ],
-      image: '/uploads/kokonte.png'
+      image: '/uploads/kokonte.jpeg'
     },
     {
       title: 'MemberME',

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -52,21 +51,35 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate sending a message (would be replaced with actual API call in production)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+      const response = await fetch("https://formspree.io/f/meqbvwrw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       });
-      
-      // Clear form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        
+        // Clear form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
       toast({
         title: "Error",
@@ -90,20 +103,20 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:contact@mehadihasan.dev" className="hover:text-primary transition-colors">mehadireaz@gmail.com</a>
+                <a href="mailto:mehadireaz@gmail.com" className="hover:text-primary transition-colors">mehadireaz@gmail.com</a>
               </div>
               
               <div className="flex items-center gap-3">
                 <Github className="h-5 w-5 text-primary" />
-                <a href="https://github.com/mehadihasan" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  github.com/mehadihasan
+                <a href="https://github.com/MehadiReaz" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  github.com/MehadiReaz
                 </a>
               </div>
               
               <div className="flex items-center gap-3">
                 <Linkedin className="h-5 w-5 text-primary" />
-                <a href="https://linkedin.com/in/mehadihasan" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  linkedin.com/in/mehadihasan
+                <a href="https://linkedin.com/in/mehadi-hasan-reaz" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  linkedin.com/in/mehadi-hasan-reaz
                 </a>
               </div>
             </div>
@@ -112,12 +125,12 @@ const Contact = () => {
               <h4 className="font-medium mb-3">Connect with me</h4>
               <div className="flex gap-3">
                 <Button variant="outline" size="icon" asChild>
-                  <a href="https://github.com/mehadihasan" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/MehadiReaz" target="_blank" rel="noopener noreferrer">
                     <Github className="h-4 w-4" />
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <a href="https://linkedin.com/in/mehadihasan" target="_blank" rel="noopener noreferrer">
+                  <a href="https://linkedin.com/in/mehadi-hasan-reaz" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-4 w-4" />
                   </a>
                 </Button>
