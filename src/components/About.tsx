@@ -73,35 +73,35 @@ const About = () => {
                 <div className="transform transition-all hover:scale-105">
                   <p className="font-medium">Mobile Development</p>
                   <div className="w-full bg-muted rounded-full h-2 mt-1">
-                    <div className="bg-primary h-2 rounded-full w-[95%] animate-[grow_1.5s_ease-out]"></div>
+                    <div className="bg-primary h-2 rounded-full w-[95%] skill-bar skill-bar-1"></div>
                   </div>
                 </div>
                 
                 <div className="transform transition-all hover:scale-105">
                   <p className="font-medium">Flutter & Dart</p>
                   <div className="w-full bg-muted rounded-full h-2 mt-1">
-                    <div className="bg-primary h-2 rounded-full w-[90%] animate-[grow_1.8s_ease-out]"></div>
+                    <div className="bg-primary h-2 rounded-full w-[90%] skill-bar skill-bar-2"></div>
                   </div>
                 </div>
                 
                 <div className="transform transition-all hover:scale-105">
                   <p className="font-medium">App Architecture</p>
                   <div className="w-full bg-muted rounded-full h-2 mt-1">
-                    <div className="bg-primary h-2 rounded-full w-[85%] animate-[grow_2.1s_ease-out]"></div>
+                    <div className="bg-primary h-2 rounded-full w-[85%] skill-bar skill-bar-3"></div>
                   </div>
                 </div>
                 
                 <div className="transform transition-all hover:scale-105">
                   <p className="font-medium">State Management</p>
                   <div className="w-full bg-muted rounded-full h-2 mt-1">
-                    <div className="bg-primary h-2 rounded-full w-[88%] animate-[grow_2.4s_ease-out]"></div>
+                    <div className="bg-primary h-2 rounded-full w-[88%] skill-bar skill-bar-4"></div>
                   </div>
                 </div>
                 
                 <div className="transform transition-all hover:scale-105">
                   <p className="font-medium">Firebase Integration</p>
                   <div className="w-full bg-muted rounded-full h-2 mt-1">
-                    <div className="bg-primary h-2 rounded-full w-[80%] animate-[grow_2.7s_ease-out]"></div>
+                    <div className="bg-primary h-2 rounded-full w-[80%] skill-bar skill-bar-5"></div>
                   </div>
                 </div>
               </div>
@@ -110,17 +110,7 @@ const About = () => {
         </div>
       </div>
       
-      <style jsx>{`
-        @keyframes grow {
-          from { width: 0%; }
-          to { width: var(--final-width); }
-        }
-        .animate-[grow_1\\.5s_ease-out] { --final-width: 95%; }
-        .animate-[grow_1\\.8s_ease-out] { --final-width: 90%; }
-        .animate-[grow_2\\.1s_ease-out] { --final-width: 85%; }
-        .animate-[grow_2\\.4s_ease-out] { --final-width: 88%; }
-        .animate-[grow_2\\.7s_ease-out] { --final-width: 80%; }
-      `}</style>
+      {/* Moving the inline styles to the index.css file instead of using style jsx */}
     </section>
   );
 };
