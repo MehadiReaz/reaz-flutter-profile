@@ -16,7 +16,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/reaz-flutter-profile">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<AllProjects />} />
