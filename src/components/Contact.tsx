@@ -1,14 +1,11 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Github, Linkedin } from 'lucide-react';
-
 const Contact = () => {
-  return (
-    <section id="contact" className="py-16 px-4 max-w-6xl mx-auto">
+  return <section id="contact" className="py-16 px-4 max-w-6xl mx-auto">
       <h2 className="section-title">Get In Touch</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -19,31 +16,19 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:contact@mehadihasan.dev" className="hover:text-primary transition-colors">
-                  contact@mehadihasan.dev
-                </a>
+                <a href="mailto:contact@mehadihasan.dev" className="hover:text-primary transition-colors">mehadireaz@gmail.com</a>
               </div>
               
               <div className="flex items-center gap-3">
                 <Github className="h-5 w-5 text-primary" />
-                <a 
-                  href="https://github.com/mehadihasan" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
+                <a href="https://github.com/mehadihasan" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                   github.com/mehadihasan
                 </a>
               </div>
               
               <div className="flex items-center gap-3">
                 <Linkedin className="h-5 w-5 text-primary" />
-                <a 
-                  href="https://linkedin.com/in/mehadihasan" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
+                <a href="https://linkedin.com/in/mehadihasan" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                   linkedin.com/in/mehadihasan
                 </a>
               </div>
@@ -93,8 +78,6 @@ const Contact = () => {
           </CardContent>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
