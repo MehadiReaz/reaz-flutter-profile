@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,7 +46,7 @@ const Projects = () => {
       links: [
         { title: 'Direct APK', url: '#' }
       ],
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7'
+      image: '/lovable-uploads/db671647-5300-412c-8d49-661b10cfce20.png'
     },
     {
       title: 'Smart HRM',
@@ -119,10 +120,10 @@ const Projects = () => {
       
       <div className="text-center mt-12">
         <Button variant="secondary" className="animate-pulse-glow">
-          <a href="#" className="flex items-center gap-2">
+          <Link to="/projects" className="flex items-center gap-2">
             View All Projects
             <ExternalLink className="h-4 w-4" />
-          </a>
+          </Link>
         </Button>
       </div>
     </section>

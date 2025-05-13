@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 
 const Header = () => {
   const scrollToContact = () => {
@@ -9,6 +9,29 @@ const Header = () => {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const downloadCV = () => {
+    // Create an anchor element and set its properties
+    const link = document.createElement('a');
+    link.href = '/mehadi-cv.pdf';
+    link.download = 'Mehadi_Hasan_Reaz_CV.pdf'; // The downloaded file name
+    
+    // Append to the document
+    document.body.appendChild(link);
+    
+    // Trigger a click on the element
+    link.click();
+    
+    // Remove the element from the document
+    document.body.removeChild(link);
   };
 
   return (
@@ -38,14 +61,17 @@ const Header = () => {
         <Button 
           variant="outline" 
           className="border-primary/30 hover:bg-primary/10 backdrop-blur-sm"
-          onClick={() => {
-            const projectsSection = document.getElementById('projects');
-            if (projectsSection) {
-              projectsSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
+          onClick={scrollToProjects}
         >
           View Projects
+        </Button>
+        <Button 
+          variant="outline" 
+          className="border-primary/30 hover:bg-primary/10 backdrop-blur-sm"
+          onClick={downloadCV}
+        >
+          <Download className="mr-2 h-4 w-4" />
+          Download CV
         </Button>
       </div>
       
